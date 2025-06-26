@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria de imagenes</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body> <!-- usare css y por lo tanto flex que es el mas facil
+     no usare bootstrap que no requiere archivo.css-->
+    <h1>Galeria de imagenes para mosaico </h1>
+    <div class="galeria">
+        <img src="img2/0.jpg" id="img0" data-index="0" class="thumb" alt="Imagen0">
+        <img src="img2/1.jpg" id="img1" data-index="1"  class="thumb" alt="Imagen1">
+        <img src="img2/2.jpg" id="img2" data-index="2"  class="thumb" alt="Imagen2">
+    </div>
+    <div class="modal">
+        <span class="close">x</span>
+        <img src="img2/0.jpg" alt="imagen modal"
+        class="imagen-modal">
+        <div class="modal-nav">
+            <button id="prev">Anterior</button>
+            <button id="next"> Siguiente</button>
+        </div>
+    </div>
+  <script src="script/script.js"></script>
+</body>
+</html>
