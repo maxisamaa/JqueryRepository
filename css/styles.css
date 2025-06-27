@@ -21,6 +21,7 @@ h1 {
     margin: 0 auto; /*auto solo funciona si hay tama;o difinido */
     align-items: start; /* por default , los estira */
     margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .thumb {
@@ -93,7 +94,7 @@ select{
 
 .close{
     position: relative;
-    left: 560px;
+    left: 660px;
     bottom: 40px;
     color: rgb(0, 0, 0);
     font-size: 30px;
@@ -122,6 +123,8 @@ select{
     cursor: pointer;
     border-radius: 10px;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .cartelera button:hover{
     background-color: rgb(144, 130, 224);
@@ -134,4 +137,10 @@ select{
 .tarjeta img {
   width: 100%;
   object-fit: cover;
+}
+
+.contenedor{
+    border: solid rgb(229, 215, 215) 2px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
