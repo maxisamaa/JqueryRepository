@@ -3,27 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galeria de imagenes</title>
+  <title>Cine</title>
   <link href="css/styles.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
+
 <body> <!-- usare css y por lo tanto flex que es el mas facil
      no usare bootstrap que no requiere archivo.css-->
-    <h1>Galeria de imagenes para mosaico </h1>
-    <div class="galeria">
-        <img src="img2/0.jpg" id="img0" data-index="0" class="thumb" alt="Imagen0">
-        <img src="img2/1.jpg" id="img1" data-index="1"  class="thumb" alt="Imagen1">
-        <img src="img2/2.jpg" id="img2" data-index="2"  class="thumb" alt="Imagen2">
+    <h1>Bienvenido a Cineflash!</h1>
+    <div class="cartelera">
+      <div class="contenedor">
+        <img src="img/pelicula1.jpg" id="img0" data-index="0" class="thumb" alt="Imagen0">
+        <h2>Interestellar IMAX</h2>
+        <button class="reservar-btn" data-pelicula="Película 0">Reservar</button>
+      </div>
+      <div class="contenedor">
+        <img src="img/pelicula2.jpg" id="img1" data-index="1"  class="thumb" alt="Imagen1">
+        <h2>Reestreno AKIRA</h2>
+        <button class="reservar-btn" data-pelicula="Película 1">Reservar</button>
+      </div>
+      <div class="contenedor">
+        <img src="img/pelicula3.jpg" id="img2" data-index="2"  class="thumb" alt="Imagen2">
+        <h2>La llegada</h2>
+        <button class="reservar-btn" data-pelicula="Película 2">Reservar</button>
+      </div>
     </div>
-    <div class="modal">
-        <span class="close">x</span>
-        <img src="img2/0.jpg" alt="imagen modal"
-        class="imagen-modal">
-        <div class="modal-nav">
-            <button id="prev">Anterior</button>
-            <button id="next"> Siguiente</button>
+    <div class="modal"> <!-- abarca toda la pantalla y la pone gris-->
+        <div class="formularito"> <!-- abarca  el formulario -->
+          <header><h2>Reserva de entradas</h2><span class="close">x</span></header>
+          <main>
+            <form id="formularioReserva">
+              <div>
+              <label for="peliculaNombre">Pelicula</label>
+              <input type="text" id="peliculaNombre" name="pelicula" readonly/>
+              </div>
+              <div>
+              <label for="horario">Horario</label>
+              <select id="horario" required>
+                <option disabled selected>Selecciona una hora</option>
+                <option>12:00</option>
+                <option>15:30</option>
+                <option>18:00</option>
+                <option>21:00</option>
+              </select>
+              </div>
+              <div>
+              <label>Cantidad de Asientos</label>
+              <input type="number" min="1" required />
+              </div>
+              <div>
+              <label id="pago"><strong>Pago (simulado)</strong></label>
+              <label>Número de tarjeta</label>
+              <input type="text" id="tarjeta" maxlength="19" placeholder="**** **** **** 1234" required />
+              </div>
+              <div>
+              <label>Nombre del titular</label>
+              <input type="text" required />
+              </div>
+              <div>
+              <label>CCV</label>
+              <input type="number" maxlength="3" required />
+              </div>
+
+              <div class="botones-formulario">
+                <button type="submit" class="confirmar">Confirmar Reserva</button>
+                <button type="button" class="cancelar">Cancelar</button>
+               </div>
+            </form>
+          </main>
+
         </div>
     </div>
   <script src="script/script.js"></script>

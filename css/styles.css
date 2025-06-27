@@ -13,7 +13,7 @@ h1 {
     margin: 40px 0;
 }
 
-.galeria { /*contenedor de fotos */
+.cartelera { /*contenedor de fotos */
     display:flex;
     justify-content: center; /* horizontal*/
     gap:10px; /* espacio entre elemento y elemento , no pone padding ni margin del perimetro del div*/
@@ -27,6 +27,7 @@ h1 {
     width: 400px;
     cursor:pointer;
     height: auto;
+    height: 500px;
 }
 
 .modal { /*ocupa toda la pantalla*/
@@ -40,25 +41,97 @@ h1 {
     display: none;
 }
 
-.imagen-modal {
-    max-width: 80%;
-    max-height: 90%;
-    margin: auto;
-    margin-top: 50px;
+.formularito{
+    background-color: aliceblue;
+    width: 30%;
+    height: 80%;
+    margin: 70px auto;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: start;
 }
 
+.modal header {
+    margin-top: 10px ;
+}
+
+.modal main {
+    background-color: rgba(176, 236, 236,0.1);
+    width: auto;
+    height: auto;
+    font-size: 23px;
+    padding: 10px;
+}
+.modal main label{
+    display: block;
+    margin-bottom: 5px;
+}
+.modal main div{
+    margin: 5px;
+    margin-bottom: 5px;
+}
+input{
+    border: solid rgb(219, 236, 238) 2px;
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+    height:auto ;
+    border-radius: 5px;
+}
+select{
+    border: solid rgb(219, 236, 238) 2px;
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+    height:auto ;
+    border-radius: 5px;
+}
+#pago{
+    margin-bottom: 20px;
+}
+
+
 .close{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 35px;
+    position: relative;
+    left: 560px;
+    bottom: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
     cursor: pointer;
 }
-.modal-nav button{
+.botones-formulario{
+    text-align: center;
+    font-size: 25px;
+}
+.botones-formulario button{
+    text-align: center;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 5px;
+    padding: 10px;
+}
+.botones-formulario button:hover{
+    background-color: rgb(120, 120, 217);
+}
+.cartelera button{
     padding: 10px 15px;
-    background-color: white;
+    background-color: rgb(74, 47, 225);
+    color: aliceblue;
     border:none;
     font-size: 20px;
     cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.cartelera button:hover{
+    background-color: rgb(144, 130, 224);
+    font-size: 25px;
+
+}
+
+/* Imagen con proporción 4:3 recortada */
+/* Imagen con proporción 4:3 recortada */
+.tarjeta img {
+  width: 100%;
+  object-fit: cover;
 }
