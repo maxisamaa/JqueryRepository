@@ -16,6 +16,51 @@ $(".close").click(function(){
   $(".modal").fadeOut();
 })
 
+let ultimotitulo=""
+$(document).ready(function() { 
+  $('.reservar-btn').on('click', function() {
+    let titulo = $(this).data('pelicula');
+
+    // Establecer el valor del campo y hacerlo no editable
+    $('#peliculaNombre').val(titulo);
+
+    // Mostrar el modal (puedes usar un plugin como Bootstrap Modal si prefieres)
+    $('.modal').fadeIn();
+
+    ultimotitulo=titulo // let solo se usa para declarar varianles nuevas
+  });
+});
+
+$(".cancelar").click(function(){
+    $(".modal").fadeOut();
+});
+
+$(document).ready(function(){
+  $("#formularioReserva").submit(function(event){
+    event.preventDefault(); // Detiene el submit normal
+    if (this.checkValidity()) {
+      console.log("Reserva confirmada!");
+      $(".modal").fadeOut();
+
+      console.log(" la reserva para " + ultimotitulo +"ha sido confirmada!")
+
+      $(".card").fadeIn();
+
+    } else {
+      console.log("Por favor completa todos los campos.");
+      this.reportValidity(); 
+    }
+  });
+});
+
+
+// modificar tarjeta 
+
+
+
+
+
+
 
 
 /*$("#prev").click(function(){
@@ -28,42 +73,3 @@ $(".close").click(function(){
 /* un array con todos los elementso que forman parte
 de una clase por su orden en el arbol html , es decir
 el orden en que se encuentran en el html*/ 
-
-$(document).ready(function() { 
-  $('.reservar-btn').on('click', function() {
-    let titulo = $(this).data('pelicula');
-
-    // Establecer el valor del campo y hacerlo no editable
-    $('#peliculaNombre').val(titulo);
-
-    // Mostrar el modal (puedes usar un plugin como Bootstrap Modal si prefieres)
-    $('.modal').fadeIn();
-  });
-});
-
-
-
-$(".cancelar").click(function(){
-    $(".modal").fadeOut();
-});
-
-$(document).ready(function(){
-  $("#formularioReserva").submit(function(event){
-    event.preventDefault(); // Detiene el submit normal
-
-    // Verifica validez
-    if (this.checkValidity()) {
-      console.log("Reserva confirmada!");
-
-      // Aquí tu lógica de confirmación:
-      // - Cerrar modal
-      // - Mostrar mensaje
-      // - Limpiar formulario si deseas
-      $(".modal").fadeOut();
-      $(".card").fadeIn();
-    } else {
-      console.log("Por favor completa todos los campos.");
-      this.reportValidity(); // Muestra mensaje de error nativo en campos faltantes
-    }
-  });
-});
