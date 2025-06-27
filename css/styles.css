@@ -25,10 +25,16 @@ h1 {
 }
 
 .thumb {
+    display: block;
     width: 400px;
     cursor:pointer;
     height: auto;
     height: 500px;
+    transition: all 0.3s ease;
+}
+
+.thumb:hover {
+    transform: scale(1.1);
 }
 
 .modal { /*ocupa toda la pantalla*/
@@ -51,9 +57,12 @@ h1 {
     padding: 20px;
     text-align: start;
 }
-
+h2 {
+    margin-top: 20px;
+}
 .modal header {
     margin-top: 10px ;
+    position: relative;
 }
 
 .modal main {
@@ -93,9 +102,9 @@ select{
 
 
 .close{
-    position: relative;
-    left: 660px;
-    bottom: 40px;
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
     color: rgb(0, 0, 0);
     font-size: 30px;
     cursor: pointer;
@@ -143,4 +152,6 @@ select{
     border: solid rgb(229, 215, 215) 2px;
     border-radius: 10px;
     margin-bottom: 10px;
+    overflow: hidden;
+    flex-shrink: 0; /* evita que el flexbox lo encoja al aplicar display block a thumbs */
 }

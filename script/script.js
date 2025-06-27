@@ -4,6 +4,10 @@ let currentIndex=0
 
 images.click(function(){
     $(".modal").fadeIn();
+    let titulo = $('.reservar-btn').data('pelicula');
+
+    // Establecer el valor del campo y hacerlo no editable
+    $('#peliculaNombre').val(titulo);
     //activo .modal con anmacion
 })
 
@@ -27,7 +31,7 @@ $(document).ready(function() {
     let titulo = $(this).data('pelicula');
 
     // Establecer el valor del campo y hacerlo no editable
-    $('#pelicula-nombre').val(titulo);
+    $('#peliculaNombre').val(titulo);
 
     // Mostrar el modal (puedes usar un plugin como Bootstrap Modal si prefieres)
     $('.modal').fadeIn();
