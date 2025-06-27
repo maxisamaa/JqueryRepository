@@ -31,6 +31,7 @@ h1 {
     height: auto;
     height: 500px;
     transition: all 0.3s ease;
+    transform-origin: bottom center;
 }
 
 .thumb:hover {
@@ -49,9 +50,9 @@ h1 {
 }
 
 .formularito{
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     width: 30%;
-    height: 80%;
+    height: 90%;
     margin: 70px auto;
     border-radius: 10px;
     padding: 20px;
@@ -111,14 +112,15 @@ select{
 }
 .botones-formulario{
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
 }
 .botones-formulario button{
     text-align: center;
     color: aliceblue;
-    background-color: blue;
-    border-radius: 5px;
+    background-color: rgb(34, 34, 225);
+    border-radius: 8px;
     padding: 10px;
+    margin-top: 20px;
 }
 .botones-formulario button:hover{
     background-color: rgb(120, 120, 217);
@@ -154,4 +156,8 @@ select{
     margin-bottom: 10px;
     overflow: hidden;
     flex-shrink: 0; /* evita que el flexbox lo encoja al aplicar display block a thumbs */
+}
+
+.card{
+    display: none;
 }

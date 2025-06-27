@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -15,17 +16,17 @@
     <h1>Bienvenido a Cineflash!</h1>
     <div class="cartelera">
       <div class="contenedor">
-        <img src="img/pelicula1.jpg" id="img0" data-index="0" class="thumb" alt="Imagen0">
+        <img src="img/pelicula1.jpg" id="img0" data-pelicula="Interestellar IMAX" class="thumb" alt="Imagen0">
         <h2>Interestellar IMAX</h2>
         <button class="reservar-btn" data-pelicula="Interestellar IMAX">Reservar</button>
       </div>
       <div class="contenedor">
-        <img src="img/pelicula2.jpg" id="img1" data-index="1"  class="thumb" alt="Imagen1">
+        <img src="img/pelicula2.jpg" id="img1" data-pelicula="Reestreno AKIRA"  class="thumb" alt="Imagen1">
         <h2>Reestreno AKIRA</h2>
         <button class="reservar-btn" data-pelicula="Reestreno AKIRA">Reservar</button>
       </div>
       <div class="contenedor">
-        <img src="img/pelicula3.jpg" id="img2" data-index="2"  class="thumb" alt="Imagen2">
+        <img src="img/pelicula3.jpg" id="img2" data-pelicula="La llegada"  class="thumb" alt="Imagen2">
         <h2>La llegada</h2>
         <button class="reservar-btn" data-pelicula="La llegada">Reservar</button>
       </div>
@@ -74,9 +75,20 @@
                </div>
             </form>
           </main>
-
         </div>
     </div>
+  <div class="container">
+    <div class="row"></div>
+      <div class="col-6 mx-auto">
+        <div class="card text-bg-success text-center" style="max-width: auto;">
+          <div class="card-header"><strong> Hecho!</strong></div>
+          <div class="card-body">
+            <h5 class="card-title">Tu reserva esta lista!</h5>
+            <p class="card-text">Info Reserva</p>
+          </div>
+      </div>
+    </div>
+  </div>
   <script src="script/script.js"></script>
 </body>
 </html>

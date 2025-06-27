@@ -4,7 +4,8 @@ let currentIndex=0
 
 images.click(function(){
     $(".modal").fadeIn();
-    let titulo = $('.reservar-btn').data('pelicula');
+    let titulo = $(this).data('pelicula');
+    console.log(titulo)
 
     // Establecer el valor del campo y hacerlo no editable
     $('#peliculaNombre').val(titulo);
@@ -12,14 +13,16 @@ images.click(function(){
 })
 
 $(".close").click(function(){
-    $(".modal").fadeOut();
+  $(".modal").fadeOut();
 })
 
-$("#prev").click(function(){
+
+
+/*$("#prev").click(function(){
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     let src_imagen = $(images[currentIndex]).attr("src");
     $(".imagen-modal").attr("src", src_imagen);
-});
+});*/
 
 //OJO con images.length , jquery automaticamente crea
 /* un array con todos los elementso que forman parte
@@ -40,6 +43,27 @@ $(document).ready(function() {
 
 
 
-$(".confirmar, .cancelar").click(function(){
+$(".cancelar").click(function(){
     $(".modal").fadeOut();
+});
+
+$(document).ready(function(){
+  $("#formularioReserva").submit(function(event){
+    event.preventDefault(); // Detiene el submit normal
+
+    // Verifica validez
+    if (this.checkValidity()) {
+      console.log("Reserva confirmada!");
+
+      // Aquí tu lógica de confirmación:
+      // - Cerrar modal
+      // - Mostrar mensaje
+      // - Limpiar formulario si deseas
+      $(".modal").fadeOut();
+      $(".card").fadeIn();
+    } else {
+      console.log("Por favor completa todos los campos.");
+      this.reportValidity(); // Muestra mensaje de error nativo en campos faltantes
+    }
+  });
 });
