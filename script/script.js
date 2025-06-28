@@ -36,15 +36,19 @@ $(".cancelar").click(function(){
     $(".modal").fadeOut();
 });
 
-let cantidadNum = $("#cantidadEntradas").val();
-console.log("Cantidad de entradas reservadas: " + cantidadNum);
+
 
 $(document).ready(function(){
   $("#formularioReserva").submit(function(event){
     event.preventDefault(); // Detiene el submit normal
     if (this.checkValidity()) {
-      $(".modal").fadeOut();
       $(".card-title").text("Tu reserva para " +ultimotitulo+ " ha sido confirmada! ")
+      let cantidadNum = $("#cantidadEntradas").val();
+      let nombre=$("#nom").val();
+      console.log($("#nom")); // Verifica si jQuery encuentra el elemento
+      console.log($("#nom").val()); 
+      $(".card-text").text("Gracias " + nombre + ", has reservado " + cantidadNum + " entradas para " + ultimotitulo )
+      $(".modal").fadeOut();
       $(".card").fadeIn();
     
     } else {
