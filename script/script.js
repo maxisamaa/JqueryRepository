@@ -1,22 +1,23 @@
 let images=$(".thumb"); /*$(".thumb")==document.querySelector(".thumb")*/
 // selecciona cualquier imagen con clase thumb
-let currentIndex=0
+
+let ultimotitulo=""
 
 images.click(function(){
     $(".modal").fadeIn();
     let titulo = $(this).data('pelicula');
-    console.log(titulo)
 
     // Establecer el valor del campo y hacerlo no editable
     $('#peliculaNombre').val(titulo);
     //activo .modal con anmacion
+    ultimotitulo=titulo
 })
 
 $(".close").click(function(){
   $(".modal").fadeOut();
 })
 
-let ultimotitulo=""
+
 $(document).ready(function() { 
   $('.reservar-btn').on('click', function() {
     let titulo = $(this).data('pelicula');
@@ -35,17 +36,17 @@ $(".cancelar").click(function(){
     $(".modal").fadeOut();
 });
 
+let cantidadNum = $("#cantidadEntradas").val();
+console.log("Cantidad de entradas reservadas: " + cantidadNum);
+
 $(document).ready(function(){
   $("#formularioReserva").submit(function(event){
     event.preventDefault(); // Detiene el submit normal
     if (this.checkValidity()) {
-      console.log("Reserva confirmada!");
       $(".modal").fadeOut();
-
-      console.log(" la reserva para " + ultimotitulo +"ha sido confirmada!")
-
+      $(".card-title").text("Tu reserva para " +ultimotitulo+ " ha sido confirmada! ")
       $(".card").fadeIn();
-
+    
     } else {
       console.log("Por favor completa todos los campos.");
       this.reportValidity(); 
@@ -53,7 +54,7 @@ $(document).ready(function(){
   });
 });
 
-
+//let titulo = $(contenedor[currentIndex]).attr("data-pelicula"); me dice el titulo si por variable global voy pasando el currentIndex
 // modificar tarjeta 
 
 

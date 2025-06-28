@@ -16,19 +16,19 @@
     <h1>Bienvenido a Cineflash!</h1>
     <div class="cartelera">
       <div class="contenedor">
-        <img src="img/pelicula1.jpg" id="img0" data-pelicula="Interestellar IMAX" class="thumb" alt="Imagen0">
+        <img src="img/pelicula1.jpg" id="pelicula1" data-pelicula="Interestellar IMAX" class="thumb" alt="Imagen0">
         <h2>Interestellar IMAX</h2>
-        <button class="reservar-btn" data-pelicula="Interestellar IMAX">Reservar</button>
+        <button class="reservar-btn" id="pelicula1" data-pelicula="Interestellar IMAX">Reservar</button>
       </div>
       <div class="contenedor">
-        <img src="img/pelicula2.jpg" id="img1" data-pelicula="Reestreno AKIRA"  class="thumb" alt="Imagen1">
+        <img src="img/pelicula2.jpg" id="pelicula2" data-pelicula="Reestreno AKIRA"  class="thumb" alt="Imagen1">
         <h2>Reestreno AKIRA</h2>
-        <button class="reservar-btn" data-pelicula="Reestreno AKIRA">Reservar</button>
+        <button class="reservar-btn"id="pelicula2" data-pelicula="Reestreno AKIRA">Reservar</button>
       </div>
       <div class="contenedor">
-        <img src="img/pelicula3.jpg" id="img2" data-pelicula="La llegada"  class="thumb" alt="Imagen2">
+        <img src="img/pelicula3.jpg" id="pelicula3" data-pelicula="La llegada"  class="thumb" alt="Imagen2">
         <h2>La llegada</h2>
-        <button class="reservar-btn" data-pelicula="La llegada">Reservar</button>
+        <button class="reservar-btn" id="pelicula3" data-pelicula="La llegada">Reservar</button>
       </div>
     </div>
     <div class="modal"> <!-- abarca toda la pantalla y la pone gris-->
@@ -53,7 +53,7 @@
               </div>
               <div>
               <label>Cantidad de Asientos</label>
-              <input type="number" min="1" required />
+              <input id="cantidadEntradas" type="number" min="1" required />
               </div>
               <div>
               <label id="pago"><strong>Pago (simulado)</strong></label>
@@ -68,7 +68,6 @@
               <label>CCV</label>
               <input type="number" maxlength="3" required />
               </div>
-
               <div class="botones-formulario">
                 <button type="submit" class="confirmar">Confirmar Reserva</button>
                 <button type="button" class="cancelar">Cancelar</button>
